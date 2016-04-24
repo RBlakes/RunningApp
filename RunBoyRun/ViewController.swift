@@ -8,12 +8,18 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
+    
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("test push for github")
+        print("initial view loaded")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,11 +33,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 10
+        return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -58,3 +64,4 @@ extension ViewController: UITableViewDelegate {
         print("Selected (\(indexPath.section),\(indexPath.row)")
     }
 }
+

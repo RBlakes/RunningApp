@@ -16,9 +16,21 @@ class SettingsVC : UIViewController {
     @IBOutlet weak var run: UISwitch!
     
     @IBAction func walkSwitch(sender: AnyObject) {
+        walk.setOn(true, animated: true)
+        jog.setOn(false, animated: true)
+        run.setOn(false, animated: true)
     }
     @IBAction func jogSwitch(sender: AnyObject) {
+        walk.setOn(false, animated: true)
+        jog.setOn(true, animated: true)
+        run.setOn(false, animated: true)
     }
     @IBAction func runSwitch(sender: AnyObject) {
+        walk.setOn(false, animated: true)
+        jog.setOn(false, animated: true)
+        run.setOn(true, animated: true)
     }
+    
+    var strideLength = 0
+    
 }

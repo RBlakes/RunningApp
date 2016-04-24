@@ -85,7 +85,8 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Route" id="qQZ-7k-vnh">
                             <connections>
-                                <segue destination="FYA-e6-Pe9" kind="show" id="xG5-WF-x8W"/>
+                                <action selector="addRouteButton:" destination="kuQ-yP-MmG" id="GFZ-4V-KBM"/>
+                                <segue destination="FYA-e6-Pe9" kind="show" id="mVI-lJ-wiV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -106,36 +107,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="H8R-C0-Fgy">
-                                <rect key="frame" x="20" y="28" width="560" height="564"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="H8R-C0-Fgy">
+                                <rect key="frame" x="20" y="28" width="560" height="520"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pVf-EU-UFq">
-                                        <rect key="frame" x="0.0" y="0.0" width="560" height="141"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="130"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Stride Length:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xv-hT-4aS">
-                                                <rect key="frame" x="0.0" y="60" width="153" height="21"/>
+                                                <rect key="frame" x="0.0" y="55" width="153" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rho-zo-bcc">
-                                                <rect key="frame" x="153" y="56" width="407" height="30"/>
+                                                <rect key="frame" x="153" y="50" width="407" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ipj-aJ-7MB">
-                                        <rect key="frame" x="0.0" y="141" width="560" height="141"/>
+                                        <rect key="frame" x="0.0" y="130" width="560" height="130"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RKq-9L-ndc">
-                                                <rect key="frame" x="0.0" y="55" width="51" height="31"/>
+                                                <rect key="frame" x="0.0" y="50" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="walkSwitch:" destination="zC6-74-Ah5" eventType="valueChanged" id="t5N-Dd-tFy"/>
                                                 </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGA-1l-BKh">
-                                                <rect key="frame" x="49" y="60" width="511" height="21"/>
+                                                <rect key="frame" x="49" y="55" width="511" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -143,16 +144,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L3t-EZ-e99">
-                                        <rect key="frame" x="0.0" y="282" width="560" height="141"/>
+                                        <rect key="frame" x="0.0" y="260" width="560" height="130"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zwT-cE-DbC">
-                                                <rect key="frame" x="0.0" y="55" width="51" height="31"/>
+                                                <rect key="frame" x="0.0" y="50" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="jogSwitch:" destination="zC6-74-Ah5" eventType="valueChanged" id="6ke-GL-9vd"/>
                                                 </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LP-8I-cF0">
-                                                <rect key="frame" x="49" y="60" width="511" height="21"/>
+                                                <rect key="frame" x="49" y="55" width="511" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -160,16 +161,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="6UT-jb-81O">
-                                        <rect key="frame" x="0.0" y="423" width="560" height="141"/>
+                                        <rect key="frame" x="0.0" y="390" width="560" height="130"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="P6t-OO-D0g">
-                                                <rect key="frame" x="0.0" y="55" width="51" height="31"/>
+                                                <rect key="frame" x="0.0" y="50" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="runSwitch:" destination="zC6-74-Ah5" eventType="valueChanged" id="hbx-kI-V8T"/>
                                                 </connections>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgS-yd-b1a">
-                                                <rect key="frame" x="49" y="60" width="511" height="21"/>
+                                                <rect key="frame" x="49" y="55" width="511" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -209,12 +210,62 @@
                     <view key="view" contentMode="scaleToFill" id="rFm-vG-TQw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a7F-Ms-tql">
+                                <rect key="frame" x="20" y="72" width="560" height="437"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="FYA-e6-Pe9" id="Rkw-DN-uy4"/>
+                                </connections>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eF2-ye-G0g">
+                                <rect key="frame" x="20" y="517" width="560" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yh1-uU-vb8">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="75"/>
+                                        <state key="normal" title="Add Point"/>
+                                        <connections>
+                                            <action selector="addPointButton:" destination="FYA-e6-Pe9" eventType="touchUpInside" id="Vej-IB-A9H"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8af-FD-0UY">
+                                        <rect key="frame" x="280" y="0.0" width="280" height="75"/>
+                                        <state key="normal" title="Delete Point"/>
+                                        <connections>
+                                            <action selector="deletePointButton:" destination="FYA-e6-Pe9" eventType="touchUpInside" id="4ui-VM-fsW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="7X1-mL-P1l"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="eF2-ye-G0g" secondAttribute="trailing" id="2lO-nG-6zU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a7F-Ms-tql" secondAttribute="trailing" id="49R-7Y-BDv"/>
+                            <constraint firstItem="eF2-ye-G0g" firstAttribute="leading" secondItem="rFm-vG-TQw" secondAttribute="leadingMargin" id="I95-Li-Y4J"/>
+                            <constraint firstItem="a7F-Ms-tql" firstAttribute="leading" secondItem="rFm-vG-TQw" secondAttribute="leadingMargin" id="Ney-9g-zJX"/>
+                            <constraint firstItem="eF2-ye-G0g" firstAttribute="top" secondItem="a7F-Ms-tql" secondAttribute="bottom" constant="8" symbolic="YES" id="WWf-lK-dP4"/>
+                            <constraint firstItem="gAV-YP-RRV" firstAttribute="top" secondItem="eF2-ye-G0g" secondAttribute="bottom" constant="8" symbolic="YES" id="Z4C-jq-Qwf"/>
+                            <constraint firstItem="a7F-Ms-tql" firstAttribute="top" secondItem="1VQ-W5-7tp" secondAttribute="bottom" constant="8" symbolic="YES" id="rzK-b0-OYd"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OAV-Ua-fdq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="c9x-SX-Ffw">
+                            <connections>
+                                <action selector="saveRouteButton:" destination="FYA-e6-Pe9" id="Pa8-uS-5wh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addMapView" destination="a7F-Ms-tql" id="6lb-6Y-Kmp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVR-w6-5k7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6331" y="550"/>
+            <point key="canvasLocation" x="6306" y="552"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vGe-fr-amz">
