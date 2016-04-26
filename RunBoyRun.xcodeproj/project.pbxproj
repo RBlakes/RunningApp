@@ -15,6 +15,8 @@
 		3F55150D1CB875F80094DD2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F55150C1CB875F80094DD2E /* Assets.xcassets */; };
 		3F5515101CB875F80094DD2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55150E1CB875F80094DD2E /* LaunchScreen.storyboard */; };
 		3F7630D31CCC3FB50008DC43 /* CustomMapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7630D21CCC3FB50008DC43 /* CustomMapPin.swift */; };
+		3FE7D8BA1CCEF73C00C89BCF /* TapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE7D8B91CCEF73C00C89BCF /* TapGestureRecognizer.swift */; };
+		3FE7D8BC1CCF114500C89BCF /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE7D8BB1CCF114500C89BCF /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		3F55150F1CB875F80094DD2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F5515111CB875F80094DD2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F7630D21CCC3FB50008DC43 /* CustomMapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMapPin.swift; sourceTree = "<group>"; };
+		3FE7D8B91CCEF73C00C89BCF /* TapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapGestureRecognizer.swift; sourceTree = "<group>"; };
+		3FE7D8BB1CCF114500C89BCF /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,10 @@
 			children = (
 				3F5515051CB875F80094DD2E /* AppDelegate.swift */,
 				3F5515071CB875F80094DD2E /* ViewController.swift */,
+				3FE7D8BB1CCF114500C89BCF /* Route.swift */,
 				3F5515091CB875F80094DD2E /* Main.storyboard */,
 				3F373B9C1CC9C5D300D391DB /* NewRouteVC.swift */,
+				3FE7D8B91CCEF73C00C89BCF /* TapGestureRecognizer.swift */,
 				3F7630D21CCC3FB50008DC43 /* CustomMapPin.swift */,
 				3F373B9A1CC9C3AA00D391DB /* SettingsVC.swift */,
 				3F55150C1CB875F80094DD2E /* Assets.xcassets */,
@@ -149,6 +155,8 @@
 				3F7630D31CCC3FB50008DC43 /* CustomMapPin.swift in Sources */,
 				3F5515061CB875F80094DD2E /* AppDelegate.swift in Sources */,
 				3F373B9B1CC9C3AA00D391DB /* SettingsVC.swift in Sources */,
+				3FE7D8BC1CCF114500C89BCF /* Route.swift in Sources */,
+				3FE7D8BA1CCEF73C00C89BCF /* TapGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

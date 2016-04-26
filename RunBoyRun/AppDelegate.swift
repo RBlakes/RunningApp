@@ -1,3 +1,6 @@
+// Randy Blakeslee
+// CS3200 Final Project
+
 //
 //  AppDelegate.swift
 //  RunBoyRun

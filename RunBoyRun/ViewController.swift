@@ -1,3 +1,6 @@
+// Randy Blakeslee
+// CS3200 Final Project
+
 //
 //  ViewController.swift
 //  RunBoyRun
@@ -12,7 +15,12 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var estimatedTimeLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
+    var routes = [Route]()
+    var selectedRow = 0
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,32 +35,36 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func unwindToMainMenu(sender: UIStoryboardSegue) {
+        let sourceVC = sender.sourceViewController as! NewRouteVC
+         let newRouteTable = sourceVC.newRoute
+            
+            routes.append(newRouteTable)
+            tableView.reloadData()
+        
+    }
+
 
 }
 
 
 extension ViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 0
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return routes.count
     }
     
-    func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "Footer \(section)"
-    }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = "Section: \(indexPath.section), Row: \(indexPath.row)"
+        cell.textLabel?.text = "\(routes[indexPath.row].routeNumber)"
         
         return cell
     }
@@ -62,6 +74,8 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("Selected (\(indexPath.section),\(indexPath.row)")
+        selectedRow = indexPath.row
+        distanceLabel.text = "Total Distance: \(routes[indexPath.row].routeDistance)"
     }
 }
 

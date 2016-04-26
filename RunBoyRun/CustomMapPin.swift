@@ -1,3 +1,6 @@
+// Randy Blakeslee
+// CS3200 Final Project
+
 //
 //  CustomMapPin.swift
 //  RunBoyRun
@@ -10,6 +13,7 @@ import Foundation
 import MapKit
 import UIKit
 
+// Custom class for the custom map annotaion
 class CustomMapPinAnnotation : NSObject, MKAnnotation {
     private var coord: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     

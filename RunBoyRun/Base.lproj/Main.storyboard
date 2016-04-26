@@ -90,6 +90,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="distanceLabel" destination="nOH-4v-PqR" id="Tqh-eG-la5"/>
+                        <outlet property="estimatedTimeLabel" destination="r3Z-8m-paB" id="zR3-bd-PnW"/>
+                        <outlet property="tableView" destination="uns-Qi-y8Z" id="Bs4-4t-Tdk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eH9-8R-WBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,14 +118,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pVf-EU-UFq">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="130"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Stride Length:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xv-hT-4aS">
-                                                <rect key="frame" x="0.0" y="55" width="153" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Stride Length (ft):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xv-hT-4aS">
+                                                <rect key="frame" x="0.0" y="55" width="180" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rho-zo-bcc">
-                                                <rect key="frame" x="153" y="50" width="407" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2.17" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rho-zo-bcc">
+                                                <rect key="frame" x="180" y="50" width="380" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -212,32 +217,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a7F-Ms-tql">
-                                <rect key="frame" x="20" y="72" width="560" height="437"/>
+                                <rect key="frame" x="20" y="72" width="560" height="412"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="FYA-e6-Pe9" id="Rkw-DN-uy4"/>
                                 </connections>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eF2-ye-G0g">
-                                <rect key="frame" x="20" y="517" width="560" height="75"/>
+                                <rect key="frame" x="20" y="542" width="560" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yh1-uU-vb8">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="75"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                         <state key="normal" title="Add Point"/>
                                         <connections>
                                             <action selector="addPointButton:" destination="FYA-e6-Pe9" eventType="touchUpInside" id="Vej-IB-A9H"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8af-FD-0UY">
-                                        <rect key="frame" x="280" y="0.0" width="280" height="75"/>
-                                        <state key="normal" title="Delete Point"/>
+                                        <rect key="frame" x="280" y="0.0" width="280" height="50"/>
+                                        <state key="normal" title="Delete Points"/>
                                         <connections>
                                             <action selector="deletePointButton:" destination="FYA-e6-Pe9" eventType="touchUpInside" id="4ui-VM-fsW"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="7X1-mL-P1l"/>
+                                    <constraint firstAttribute="height" constant="50" id="7X1-mL-P1l"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="stO-Ut-A0S">
+                                <rect key="frame" x="20" y="492" width="560" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wm-8L-N2i">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSl-j3-ZVl">
+                                        <rect key="frame" x="280" y="0.0" width="280" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="j7R-Yq-5nS"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -245,12 +270,21 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="eF2-ye-G0g" secondAttribute="trailing" id="2lO-nG-6zU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a7F-Ms-tql" secondAttribute="trailing" id="49R-7Y-BDv"/>
+                            <constraint firstItem="stO-Ut-A0S" firstAttribute="leading" secondItem="rFm-vG-TQw" secondAttribute="leadingMargin" id="GqU-XJ-PVf"/>
                             <constraint firstItem="eF2-ye-G0g" firstAttribute="leading" secondItem="rFm-vG-TQw" secondAttribute="leadingMargin" id="I95-Li-Y4J"/>
                             <constraint firstItem="a7F-Ms-tql" firstAttribute="leading" secondItem="rFm-vG-TQw" secondAttribute="leadingMargin" id="Ney-9g-zJX"/>
                             <constraint firstItem="eF2-ye-G0g" firstAttribute="top" secondItem="a7F-Ms-tql" secondAttribute="bottom" constant="8" symbolic="YES" id="WWf-lK-dP4"/>
+                            <constraint firstItem="Yh1-uU-vb8" firstAttribute="top" secondItem="stO-Ut-A0S" secondAttribute="bottom" id="Wip-CW-Kpj"/>
                             <constraint firstItem="gAV-YP-RRV" firstAttribute="top" secondItem="eF2-ye-G0g" secondAttribute="bottom" constant="8" symbolic="YES" id="Z4C-jq-Qwf"/>
+                            <constraint firstItem="stO-Ut-A0S" firstAttribute="top" secondItem="a7F-Ms-tql" secondAttribute="bottom" constant="8" symbolic="YES" id="c0p-z9-bC3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="stO-Ut-A0S" secondAttribute="trailing" id="czE-Jb-3Yq"/>
                             <constraint firstItem="a7F-Ms-tql" firstAttribute="top" secondItem="1VQ-W5-7tp" secondAttribute="bottom" constant="8" symbolic="YES" id="rzK-b0-OYd"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WWf-lK-dP4"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="OAV-Ua-fdq">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="c9x-SX-Ffw">
@@ -261,6 +295,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addMapView" destination="a7F-Ms-tql" id="6lb-6Y-Kmp"/>
+                        <outlet property="distanceLabel" destination="8wm-8L-N2i" id="VdQ-36-gr5"/>
+                        <outlet property="estimatedTimeLabel" destination="WSl-j3-ZVl" id="9Rw-r4-ndA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVR-w6-5k7" userLabel="First Responder" sceneMemberID="firstResponder"/>
